@@ -7,6 +7,14 @@
   to = "/index.html"
   status = 200
 
+# send any auth callbacks to the app subdomain
+[[redirects]]
+  from = "/auth/*"
+  to = "https://app.mydurhamlaw.com/:splat"
+  status = 301
+  force = true
+
+
 # Clean /thank-you path (optional)
 [[redirects]]
   from = "/thank-you"
