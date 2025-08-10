@@ -1,13 +1,14 @@
 [build]
   publish = "."
 
+# Default root render
 [[redirects]]
   from = "/"
   to = "/index.html"
   status = 200
 
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = true
+# Clean /thank-you path (optional)
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200

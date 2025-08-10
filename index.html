@@ -6,6 +6,7 @@
   <title>MyDurhamLaw — AI-Powered Law Study Buddy (Coming Soon)</title>
   <meta name="description" content="MyDurhamLaw is the premium, always-on AI mentor for Durham law students: voice-first tutoring, personalised study plans, legal news feeds, live podcasts, and assignment support with ethical guardrails. Join the waitlist.">
   <link rel="preload" as="image" href="/assets/durmah-icon.webp">
+  <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles.css" />
   <meta property="og:title" content="MyDurhamLaw — AI-Powered Law Study Buddy (Coming Soon)">
   <meta property="og:description" content="Premium, always-on AI mentor for law students. Join the waitlist.">
@@ -138,8 +139,13 @@
           </ul>
         </div>
 
-        <form class="card form" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" onsubmit="return lockSubmit(this);">
-          <!-- Netlify form requirements -->
+        <form class="card form"
+              name="waitlist"
+              method="POST"
+              netlify
+              netlify-honeypot="bot-field"
+              action="/thank-you.html"
+              onsubmit="return lockSubmit(this);">
           <input type="hidden" name="form-name" value="waitlist" />
           <p class="hidden">
             <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
@@ -189,6 +195,13 @@
       </nav>
     </div>
   </footer>
+
+  <!-- Hidden template form so Netlify always detects it at build time -->
+  <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <textarea name="message"></textarea>
+  </form>
 
   <script src="/script.js"></script>
 </body>
